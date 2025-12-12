@@ -191,4 +191,3 @@ Ensure the Docker image is pushed to ECR and the task execution role has permiss
 ## License
 
 This project is part of a CloudForge Academy course and is confidential.
-```
