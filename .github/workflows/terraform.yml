@@ -4,11 +4,11 @@ on:
   push:
     branches: [main, part3**]
     paths:
-      - 'part3/**'
+      - '**'
       - '.github/workflows/terraform.yml'
   pull_request:
     branches: [main]
-    paths: ['part3/**']
+    paths: ['**']
   workflow_dispatch:
     inputs:
       action:
