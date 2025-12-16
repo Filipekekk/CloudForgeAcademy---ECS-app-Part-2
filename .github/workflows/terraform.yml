@@ -235,4 +235,4 @@ jobs:
 
       - name: Terraform Destroy
         working-directory: ${{ env.WORKING_DIR }}
-        run: terraform destroy -auto-approve
+        run: terraform destroy -auto-approve -var="container_image=destroying"
