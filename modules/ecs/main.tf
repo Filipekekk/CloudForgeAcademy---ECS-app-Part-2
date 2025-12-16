@@ -107,5 +107,10 @@ resource "aws_ecs_service" "main" {
     Name = "${var.name_prefix}-service"
   }
 
+  # IMPORTANT: Wait for IAM role to be ready
   depends_on = [aws_iam_role_policy_attachment.ecs_task_execution]
+
+  lifecycle {
+    ignore_changes = [desired_count]  # Autoscaling will manage this
+  }
 }

@@ -25,7 +25,7 @@ variable "vpc_cidr" {
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+  default     = ["eu-central-1a", "eu-central-1b"]
 }
 
 variable "public_subnet_cidrs" {
@@ -41,9 +41,8 @@ variable "private_subnet_cidrs" {
 }
 
 variable "container_image" {
-  description = "Docker image for ECS task (will be updated after ECR push)"
+  description = "Docker image for ECS task"
   type        = string
-  default     = "nginx:latest" # Temporary, will be replaced with ECR image
 }
 
 variable "container_port" {
@@ -53,7 +52,7 @@ variable "container_port" {
 }
 
 variable "task_cpu" {
-  description = "CPU units for ECS task"
+  description = "CPU units for ECS task (256 = 0.25 vCPU)"
   type        = number
   default     = 256
 }
@@ -62,6 +61,12 @@ variable "task_memory" {
   description = "Memory (MB) for ECS task"
   type        = number
   default     = 512
+}
+
+variable "min_count" {
+  description = "Minimum number of ECS tasks"
+  type        = number
+  default     = 1
 }
 
 variable "desired_count" {
@@ -73,6 +78,11 @@ variable "desired_count" {
 variable "max_count" {
   description = "Maximum number of ECS tasks"
   type        = number
-  default     = 2
+  default     = 3
 }
 
+variable "enable_autoscaling" {
+  description = "Enable ECS Service Auto Scaling"
+  type        = bool
+  default     = true
+}

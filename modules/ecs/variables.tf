@@ -43,6 +43,12 @@ variable "task_memory" {
   type        = number
 }
 
+variable "min_count" {
+  description = "Minimum number of tasks"
+  type        = number
+  default     = 1
+}
+
 variable "desired_count" {
   description = "Desired number of tasks"
   type        = number
@@ -61,4 +67,10 @@ variable "log_group_name" {
 variable "aws_region" {
   description = "AWS region"
   type        = string
+}
+
+variable "enable_autoscaling" {
+  description = "Enable ECS Service Auto Scaling"
+  type        = bool
+  default     = true
 }
