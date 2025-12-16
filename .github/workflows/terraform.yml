@@ -26,7 +26,7 @@ permissions:
 env:
   AWS_REGION: eu-central-1
   TF_VERSION: 1.6.0
-  WORKING_DIR: part3
+  WORKING_DIR: .
 
 jobs:
   init-and-validate:

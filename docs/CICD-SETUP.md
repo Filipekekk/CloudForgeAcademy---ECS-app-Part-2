@@ -12,7 +12,7 @@
 # S3 bucket
 aws s3api create-bucket \
   --bucket your-terraform-state-bucket \
-  --region us-east-1
+  --region eu-cental-1
 
 aws s3api put-bucket-versioning \
   --bucket your-terraform-state-bucket \
