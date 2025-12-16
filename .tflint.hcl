@@ -35,5 +35,5 @@ rule "terraform_unused_declarations" {
 
 rule "aws_resource_missing_tags" {
   enabled = true
-  tags    = ["Name", "Project", "Environment"]
+  tags    = ["Name"]
 }
