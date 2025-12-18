@@ -9,7 +9,6 @@ echo "Press Ctrl+C to stop"
 if command -v ab &> /dev/null; then
     ab -n 100000 -c 50 -t 600 $ALB_URL/
 else
-    echo "Using curl (install apache2-utils for better performance)"
     for i in {1..50}; do
         (while true; do curl -s $ALB_URL/ > /dev/null; done) &
     done
